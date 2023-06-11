@@ -1,0 +1,250 @@
+@font-face {
+  font-family: "Bold";
+  src: url("./assets/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "BoldItalic";
+  src: url("./assets/fonts/Poppins-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "ExtraBold";
+  src: url("./assets/fonts/Poppins-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "ExtraBoldItalic";
+  src: url("./assets/fonts/Poppins-ExtraBoldItalic.ttf");
+}
+@font-face {
+  font-family: "Italic";
+  src: url("./assets/fonts/Poppins-Italic.ttf");
+}
+@font-face {
+  font-family: "Regular";
+  src: url("./assets/fonts/Poppins-Regular.ttf");
+}
+
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+  --bold: "Bold", sans-serif;
+  --bolditalic: "BoldItalic", sans-serif;
+  --extrabold: "ExtraBold", sans-serif;
+  --extrabolditalic: "ExtraBoldItalic", sans-serif;
+  --italic: "Italic", sans-serif;
+  --regular: "Regular", sans-serif;
+}
+
+body {
+  font-family: var(--regular);
+  padding: 1em;
+  background-color: var(--Light-grey);
+}
+
+.container {
+  padding: 3em 1.5em;
+  background-color: var(--White);
+  border-radius: 1.25em 1.25em 5.5em;
+}
+
+/* START FORM SECTION */
+
+.input-wrapper {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
+  color: var(--Off-black);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: 0.75rem;
+  font-family: var(--bold);
+  letter-spacing: 0.2em;
+  color: var(--Smokey-grey);
+}
+
+.input-label.error {
+  color: var(--Light-red);
+}
+
+.input {
+  font-size: 1.3rem;
+  font-family: var(--bold);
+  border-radius: 0.5em;
+  width: 100%;
+  padding: 0.5em 0.7em;
+  margin: 0.2em 0 0.29em 0;
+  border: 0.05em solid var(--Light-grey);
+  outline: none;
+  transition: border 0.5s ease;
+}
+
+.input.error {
+  border-color: var(--Light-red);
+}
+
+.input:focus {
+  border: 0.05em solid var(--Purple);
+}
+
+.error-message {
+  color: hsla(0, 100%, 67%, 0.7);
+  font-family: var(--bolditalic);
+  font-size: 0.63rem;
+}
+
+/* END FORM SECTION */
+
+/* START SEPERATOR SECTION */
+
+.seperator-container {
+  display: grid;
+  position: relative;
+  height: 4em;
+  margin: 1.65em 0 1.95em 0;
+}
+
+.seperator-line {
+  width: 100%;
+  height: 0.1em;
+  margin: auto 0;
+  background-color: var(--Light-grey);
+}
+
+.arrow-icon-container {
+  font: inherit;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Purple);
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.arrow-icon-container:hover {
+  background-color: var(--Off-black);
+}
+
+.arrow-icon {
+  transform: scale(0.55);
+}
+
+/* END SEPERATOR SECTION */
+
+/* START AGE SECTION */
+
+.age-container {
+  line-height: 1.13;
+  width: 100%;
+}
+
+.age-data {
+  font-size: 3.55rem;
+  font-family: var(--extrabolditalic);
+}
+
+.age-data-numeric {
+  color: var(--Purple);
+}
+
+/* END AGE SECTION */
+
+/* ATTRIBUTION */
+
+.attribution {
+  font-size: 0.7rem;
+  background: var(--Smokey-grey);
+  padding: 0.1em 0.8em;
+  border-radius: 1em;
+  color: var(--Off-white);
+}
+
+.attribution a {
+  color: var(--Off-black);
+}
+
+@media (min-width: 50em) {
+  .container {
+    max-width: 52.5em;
+    width: 100%;
+    padding: 3.5em;
+  }
+  /* START FORM SECTION */
+  .input-wrapper {
+    gap: 2em;
+    max-width: 33.4em;
+  }
+
+  .input-label {
+    font-size: 0.83rem;
+  }
+
+  .input {
+    border-radius: 0.3em;
+    font-size: 2rem;
+    padding: 0.35em 0.7em;
+  }
+
+  .error-message {
+    font-size: 0.75rem;
+    padding-bottom: 0.8em;
+    font-family: var(--bolditalic);
+  }
+
+  /* END FORM SECTION */
+
+  /* START SEPERATOR SECTION */
+  .seperator-container {
+    display: flex;
+    height: 6em;
+    margin-top: -0.55em;
+  }
+
+  .seperator-line {
+    width: 44.8em;
+  }
+
+  .arrow-icon-container {
+    width: 6em;
+    height: 6em;
+    left: auto;
+    transform: none;
+    right: 0;
+  }
+
+  .arrow-icon {
+    transform: scale(1);
+  }
+
+  /* END SEPERATOR SECTION */
+
+  /* START AGE SECTION */
+  .age-container {
+    margin-top: -1.95em;
+  }
+
+  .age-data {
+    font-size: 6.5rem;
+    line-height: 1.1;
+  }
+
+  /* END AGE SECTION */
+}

@@ -76,10 +76,9 @@ const DateForm = () => {
             onKeyUp={(event) => {
               if (!(event.target as HTMLInputElement).value) setError("");
             }}
-            aria-describedby="day-error"
           />
           {(error && (
-            <em id="day-error" className="error-message" aria-live="assertive">
+            <em className="error-message" aria-live="assertive">
               {error}
             </em>
           )) ||
@@ -103,14 +102,9 @@ const DateForm = () => {
             {...register("month", { required: true, valueAsNumber: true })}
             aria-label="Month"
             placeholder="MM"
-            aria-describedby="month-error"
           />
           {errors.month && (
-            <em
-              id="month-error"
-              className="error-message"
-              aria-live="assertive"
-            >
+            <em className="error-message" aria-live="assertive">
               {errors.month.message}
             </em>
           )}
@@ -129,10 +123,9 @@ const DateForm = () => {
             {...register("year", { required: true, valueAsNumber: true })}
             aria-label="Year"
             placeholder="YYYY"
-            aria-describedby="year-error"
           />
           {errors.year && (
-            <em id="year-error" className="error-message" aria-live="assertive">
+            <em className="error-message" aria-live="assertive">
               {errors.year.message}
             </em>
           )}

@@ -64,7 +64,6 @@ const DateForm = () => {
             className={
               errors.day || error ? "input-label error" : "input-label"
             }
-            htmlFor="date"
           >
             DAY
           </label>
@@ -77,9 +76,10 @@ const DateForm = () => {
             onKeyUp={(event) => {
               if (!(event.target as HTMLInputElement).value) setError("");
             }}
+            aria-describedby="day-error"
           />
           {(error && (
-            <em className="error-message" aria-live="assertive">
+            <em id="day-error" className="error-message" aria-live="assertive">
               {error}
             </em>
           )) ||
@@ -94,7 +94,6 @@ const DateForm = () => {
             className={
               errors.month || error ? "input-label error" : "input-label"
             }
-            htmlFor="month"
           >
             MONTH
           </label>
@@ -104,9 +103,14 @@ const DateForm = () => {
             {...register("month", { required: true, valueAsNumber: true })}
             aria-label="Month"
             placeholder="MM"
+            aria-describedby="month-error"
           />
           {errors.month && (
-            <em className="error-message" aria-live="assertive">
+            <em
+              id="month-error"
+              className="error-message"
+              aria-live="assertive"
+            >
               {errors.month.message}
             </em>
           )}
@@ -116,7 +120,6 @@ const DateForm = () => {
             className={
               errors.year || error ? "input-label error" : "input-label"
             }
-            htmlFor="year"
           >
             YEAR
           </label>
@@ -126,9 +129,10 @@ const DateForm = () => {
             {...register("year", { required: true, valueAsNumber: true })}
             aria-label="Year"
             placeholder="YYYY"
+            aria-describedby="year-error"
           />
           {errors.year && (
-            <em className="error-message" aria-live="assertive">
+            <em id="year-error" className="error-message" aria-live="assertive">
               {errors.year.message}
             </em>
           )}
@@ -141,8 +145,9 @@ const DateForm = () => {
             dateValidation(data);
           })}
           className="arrow-icon-container"
+          aria-label="Submit Age"
         >
-          <img src={ArrowIcon} className="arrow-icon" />
+          <img src={ArrowIcon} className="arrow-icon" alt="submit arrow icon" />
         </button>
       </div>
     </form>
